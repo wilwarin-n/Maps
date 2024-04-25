@@ -22,7 +22,10 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations[0].coordinate.latitude)
+        print(locations[0].coordinate.longitude)
+    }
 
 }
 
