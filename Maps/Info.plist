@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Uygulamayı kullanabilmek için konumunuz gerekiyor.</string>
 </dict>
 </plist>
