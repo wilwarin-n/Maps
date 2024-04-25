@@ -18,6 +18,9 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         // Do any additional setup after loading the view.
         mapView.delegate = self // delegate map fonksiyonlarını kullanabilmek için kullanırız.
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
 
