@@ -15,7 +15,11 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var note: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    
     var locationManager = CLLocationManager()
+    var ch_latitude = Double()
+    var ch_longitude = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,6 +40,9 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
             let nokta = gestureRecognizer.location(in: mapView)
             let koordinat = mapView.convert(nokta, toCoordinateFrom: mapView)
             
+            ch_latitude = koordinat.latitude
+            ch_longitude = koordinat.longitude
+            
             let annotation = MKPointAnnotation()
             annotation.coordinate = koordinat
             annotation.title = name.text
@@ -55,6 +62,16 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
     }
 
     @IBAction func clickedSaveButton(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let locationEnt = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context)
+        
+        locationEnt.setValue(name.text, forKey: "name")
+        locationEnt.setValue(note.text, forKey: "note")
+        
+        
     }
 }
 
