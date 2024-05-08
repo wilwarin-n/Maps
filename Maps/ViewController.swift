@@ -71,6 +71,10 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         locationEnt.setValue(name.text, forKey: "name")
         locationEnt.setValue(note.text, forKey: "note")
         
+        locationEnt.setValue(ch_latitude, forKey: "latitude")
+        locationEnt.setValue(ch_longitude, forKey: "longitude")
+        
+        locationEnt.setValue(UUID(), forKey: "id")
         
     }
 }
