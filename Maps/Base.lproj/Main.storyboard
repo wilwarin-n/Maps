@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBL-C3-bGJ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBL-C3-bGJ">
                                 <rect key="frame" x="0.0" y="167" width="393" height="605"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -26,9 +26,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MF-3P-aT2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MF-3P-aT2">
                                 <rect key="frame" x="158" y="783" width="77" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Kaydet"/>
                                 <connections>
@@ -44,16 +43,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vZI-BR-Svb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aas-8f-Kc7"/>
-                            <constraint firstItem="qMS-Sb-OyK" firstAttribute="centerX" secondItem="tBL-C3-bGJ" secondAttribute="centerX" id="Gi6-VP-kBy"/>
-                            <constraint firstItem="vZI-BR-Svb" firstAttribute="trailing" secondItem="qMS-Sb-OyK" secondAttribute="trailing" id="GqT-rd-pXB"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="tBL-C3-bGJ" secondAttribute="bottom" constant="-84" id="Iur-yX-g6o"/>
-                            <constraint firstItem="vZI-BR-Svb" firstAttribute="leading" secondItem="qMS-Sb-OyK" secondAttribute="leading" id="QDG-uF-WZ2"/>
-                            <constraint firstItem="vZI-BR-Svb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Xep-Jt-JQP"/>
-                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="top" secondItem="qMS-Sb-OyK" secondAttribute="bottom" constant="25" id="hiU-gK-OJP"/>
-                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="npd-vS-A7V"/>
-                            <constraint firstItem="qMS-Sb-OyK" firstAttribute="top" secondItem="vZI-BR-Svb" secondAttribute="bottom" constant="8" id="u7r-oD-2mG"/>
-                            <constraint firstItem="vZI-BR-Svb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="vp9-Mf-3uL"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="leading" secondItem="qMS-Sb-OyK" secondAttribute="leading" id="1hF-qa-saA"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="5Ra-ql-SuH"/>
+                            <constraint firstItem="7MF-3P-aT2" firstAttribute="top" secondItem="tBL-C3-bGJ" secondAttribute="bottom" constant="11" id="5dY-c3-tWg"/>
+                            <constraint firstItem="7MF-3P-aT2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5ft-jg-jdx"/>
+                            <constraint firstItem="qMS-Sb-OyK" firstAttribute="centerX" secondItem="tBL-C3-bGJ" secondAttribute="centerX" id="6XR-ve-xq5"/>
+                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="centerX" secondItem="7MF-3P-aT2" secondAttribute="centerX" id="P5a-OS-AVr"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VFt-yQ-nRR"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="trailing" secondItem="qMS-Sb-OyK" secondAttribute="trailing" id="WLO-HJ-SQR"/>
+                            <constraint firstItem="qMS-Sb-OyK" firstAttribute="top" secondItem="vZI-BR-Svb" secondAttribute="bottom" constant="8" id="X4F-Wf-Lag"/>
+                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="top" secondItem="qMS-Sb-OyK" secondAttribute="bottom" constant="25" id="h7v-PA-jvU"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="lNc-Qk-d86"/>
+                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nDT-tu-R1a"/>
                         </constraints>
                     </view>
                     <connections>
