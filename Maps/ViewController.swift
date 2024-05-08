@@ -11,6 +11,8 @@ import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate{
 
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var note: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     override func viewDidLoad() {
@@ -35,8 +37,8 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = koordinat
-            annotation.title = "User Choice"
-            annotation.subtitle = "Subtitle"
+            annotation.title = name.text
+            annotation.subtitle = note.text
             mapView.addAnnotation(annotation)
         }
     }

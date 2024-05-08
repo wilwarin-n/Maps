@@ -18,26 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBL-C3-bGJ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="167" width="393" height="735"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMS-Sb-OyK">
+                                <rect key="frame" x="47" y="108" width="298" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-BR-Svb">
+                                <rect key="frame" x="47" y="66" width="298" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9j4-GI-EeB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tBL-C3-bGJ" secondAttribute="bottom" id="CTh-NZ-aUp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tBL-C3-bGJ" secondAttribute="trailing" id="KMa-eA-WTJ"/>
-                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZHl-es-W03"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aas-8f-Kc7"/>
+                            <constraint firstItem="qMS-Sb-OyK" firstAttribute="centerX" secondItem="tBL-C3-bGJ" secondAttribute="centerX" id="Gi6-VP-kBy"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="trailing" secondItem="qMS-Sb-OyK" secondAttribute="trailing" id="GqT-rd-pXB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="tBL-C3-bGJ" secondAttribute="bottom" constant="-84" id="Iur-yX-g6o"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="leading" secondItem="qMS-Sb-OyK" secondAttribute="leading" id="QDG-uF-WZ2"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Xep-Jt-JQP"/>
+                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="top" secondItem="qMS-Sb-OyK" secondAttribute="bottom" constant="25" id="hiU-gK-OJP"/>
+                            <constraint firstItem="tBL-C3-bGJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="npd-vS-A7V"/>
+                            <constraint firstItem="qMS-Sb-OyK" firstAttribute="top" secondItem="vZI-BR-Svb" secondAttribute="bottom" constant="8" id="u7r-oD-2mG"/>
+                            <constraint firstItem="vZI-BR-Svb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="vp9-Mf-3uL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="tBL-C3-bGJ" id="1hA-Gb-Ujo"/>
+                        <outlet property="name" destination="vZI-BR-Svb" id="sis-Bl-kkz"/>
+                        <outlet property="note" destination="qMS-Sb-OyK" id="M1A-l0-zot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="4"/>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
