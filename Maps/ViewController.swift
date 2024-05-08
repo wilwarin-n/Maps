@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate{
 
@@ -53,5 +54,7 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         mapView.setRegion(region, animated: true)
     }
 
+    @IBAction func clickedSaveButton(_ sender: Any) {
+    }
 }
 
