@@ -76,6 +76,15 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         
         locationEnt.setValue(UUID(), forKey: "id")
         
+        do {
+            try context.save()
+            print("Saved")
+        } catch {
+            print("error")
+        }
+        
     }
+    
+    
 }
 
