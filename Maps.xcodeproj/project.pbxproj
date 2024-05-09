@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DB48532F2BD9A72900BE28FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48532E2BD9A72900BE28FF /* AppDelegate.swift */; };
 		DB4853312BD9A72900BE28FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4853302BD9A72900BE28FF /* SceneDelegate.swift */; };
-		DB4853332BD9A72900BE28FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4853322BD9A72900BE28FF /* ViewController.swift */; };
+		DB4853332BD9A72900BE28FF /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4853322BD9A72900BE28FF /* MapsViewController.swift */; };
 		DB4853362BD9A72900BE28FF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DB4853352BD9A72900BE28FF /* Base */; };
 		DB4853392BD9A72900BE28FF /* Maps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB4853372BD9A72900BE28FF /* Maps.xcdatamodeld */; };
 		DB48533B2BD9A72C00BE28FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB48533A2BD9A72C00BE28FF /* Assets.xcassets */; };
@@ -17,6 +17,7 @@
 		DB4853492BD9A72D00BE28FF /* MapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4853482BD9A72D00BE28FF /* MapsTests.swift */; };
 		DB4853532BD9A72D00BE28FF /* MapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4853522BD9A72D00BE28FF /* MapsUITests.swift */; };
 		DB4853552BD9A72D00BE28FF /* MapsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4853542BD9A72D00BE28FF /* MapsUITestsLaunchTests.swift */; };
+		DB62D9312BECCD840014BC59 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB62D9302BECCD840014BC59 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 		DB48532B2BD9A72900BE28FF /* Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB48532E2BD9A72900BE28FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB4853302BD9A72900BE28FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB4853322BD9A72900BE28FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB4853322BD9A72900BE28FF /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		DB4853352BD9A72900BE28FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB4853382BD9A72900BE28FF /* Maps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Maps.xcdatamodel; sourceTree = "<group>"; };
 		DB48533A2BD9A72C00BE28FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		DB48534E2BD9A72D00BE28FF /* MapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4853522BD9A72D00BE28FF /* MapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsUITests.swift; sourceTree = "<group>"; };
 		DB4853542BD9A72D00BE28FF /* MapsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB62D9302BECCD840014BC59 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +105,9 @@
 			children = (
 				DB48532E2BD9A72900BE28FF /* AppDelegate.swift */,
 				DB4853302BD9A72900BE28FF /* SceneDelegate.swift */,
-				DB4853322BD9A72900BE28FF /* ViewController.swift */,
+				DB4853322BD9A72900BE28FF /* MapsViewController.swift */,
 				DB4853342BD9A72900BE28FF /* Main.storyboard */,
+				DB62D9302BECCD840014BC59 /* ListViewController.swift */,
 				DB48533A2BD9A72C00BE28FF /* Assets.xcassets */,
 				DB48533C2BD9A72C00BE28FF /* LaunchScreen.storyboard */,
 				DB48533F2BD9A72C00BE28FF /* Info.plist */,
@@ -261,9 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4853332BD9A72900BE28FF /* ViewController.swift in Sources */,
+				DB4853332BD9A72900BE28FF /* MapsViewController.swift in Sources */,
 				DB48532F2BD9A72900BE28FF /* AppDelegate.swift in Sources */,
 				DB4853392BD9A72900BE28FF /* Maps.xcdatamodeld in Sources */,
+				DB62D9312BECCD840014BC59 /* ListViewController.swift in Sources */,
 				DB4853312BD9A72900BE28FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
