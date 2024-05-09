@@ -33,6 +33,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9yE-Cd-uFz"/>
                     <connections>
+                        <outlet property="tableView" destination="Eyb-Fg-l8d" id="zl4-Rh-xNc"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toMapsVC" id="kEV-l0-im8"/>
                     </connections>
                 </viewController>
