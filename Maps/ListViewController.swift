@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var nameList = [String]()
+    var idList = [UUID]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +21,37 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(clickedAddButton))
         // Do any additional setup after loading the view.
+    }
+    
+    func getData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if results.count > 0 {
+                
+                for result in results as! [NSManagedObject] {
+                    
+                    if let name = result.value(forKey: "name") as? String{
+                        nameList.append(name)
+                    }
+                    if let id = result.value(forKey: "id") as? UUID {
+                        idList.append(id)
+                    }
+                    
+                    
+                    
+                }
+            }
+        } catch{
+            print("Error")
+        }
     }
     
     @objc func clickedAddButton() {
