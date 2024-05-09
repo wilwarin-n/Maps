@@ -16,12 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="cL4-oE-0r9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Eyb-Fg-l8d">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fL3-LZ-7gX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eyb-Fg-l8d" firstAttribute="leading" secondItem="fL3-LZ-7gX" secondAttribute="leading" id="Api-IY-Sij"/>
+                            <constraint firstItem="fL3-LZ-7gX" firstAttribute="trailing" secondItem="Eyb-Fg-l8d" secondAttribute="trailing" id="P5s-dP-YXT"/>
+                            <constraint firstItem="Eyb-Fg-l8d" firstAttribute="top" secondItem="fL3-LZ-7gX" secondAttribute="top" id="Sy7-U4-cty"/>
+                            <constraint firstItem="fL3-LZ-7gX" firstAttribute="bottom" secondItem="Eyb-Fg-l8d" secondAttribute="bottom" id="hUe-ZN-RKE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9yE-Cd-uFz"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="kEV-l0-im8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMapsVC" id="kEV-l0-im8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MR6-wr-YkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
