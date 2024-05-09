@@ -13,6 +13,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     var nameList = [String]()
     var idList = [UUID]()
+    
+    var chosen_name = ""
+    var chosen_id : UUID?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func clickedAddButton() {
+        chosen_name = ""
         performSegue(withIdentifier: "toMapsVC", sender: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,14 +78,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosen_name = nameList[indexPath.row]
+        chosen_id = idList[indexPath.row]
+        
+        performSegue(withIdentifier: "toMapsVC", sender: nil)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMapsVC" {
+            let destinationVC = segue.destination as! MapsViewController
+            destinationVC.ch_name = chosen_name
+            destinationVC.ch_id = chosen_id
+            
+        }
+    }
 
 }
