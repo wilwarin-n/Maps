@@ -15,7 +15,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(clickedAddButton))
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func clickedAddButton() {
+        performSegue(withIdentifier: "toMapsVC", sender: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
