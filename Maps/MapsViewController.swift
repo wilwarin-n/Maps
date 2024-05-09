@@ -10,7 +10,7 @@ import MapKit
 import CoreLocation
 import CoreData
 
-class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate{
+class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate{
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var note: UITextField!
