@@ -21,6 +21,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(clickedAddButton))
         // Do any additional setup after loading the view.
+        
+        getData()
     }
     
     func getData() {
@@ -36,6 +38,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if results.count > 0 {
                 
+                nameList.removeAll(keepingCapacity: false)
+                idList.removeAll(keepingCapacity: false)
+                
                 for result in results as! [NSManagedObject] {
                     
                     if let name = result.value(forKey: "name") as? String{
@@ -48,6 +53,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     
                 }
+                tableView.reloadData()
             }
         } catch{
             print("Error")
@@ -58,12 +64,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "toMapsVC", sender: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return nameList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = nameList[indexPath.row]
         return cell
     }
 
