@@ -92,8 +92,8 @@
                     <navigationItem key="navigationItem" id="UI9-7I-Mbu"/>
                     <connections>
                         <outlet property="mapView" destination="tBL-C3-bGJ" id="1hA-Gb-Ujo"/>
-                        <outlet property="name" destination="vZI-BR-Svb" id="sis-Bl-kkz"/>
-                        <outlet property="note" destination="qMS-Sb-OyK" id="M1A-l0-zot"/>
+                        <outlet property="nameTextField" destination="vZI-BR-Svb" id="sis-Bl-kkz"/>
+                        <outlet property="noteTextField" destination="qMS-Sb-OyK" id="M1A-l0-zot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

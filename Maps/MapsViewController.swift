@@ -12,8 +12,8 @@ import CoreData
 
 class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate{
 
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var note: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
@@ -67,8 +67,19 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
                                 if let latitude = result.value(forKey: "latitude") as? Double {
                                     annotationLatitude = latitude
                                     
-                                    if let longtitude = result.value(forKey: "longtitude") as? Double {
-                                        annotationLongtitude = longtitude
+                                    if let longitude = result.value(forKey: "longitude") as? Double {
+                                        annotationLongtitude = longitude
+                                        
+                                        let annotation = MKPointAnnotation()
+                                        annotation.title = annotationTitle
+                                        annotation.subtitle = annotationSubtitle
+                                        let coordinate = CLLocationCoordinate2D(latitude: annotationLatitude, longitude: annotationLongtitude)
+                                        annotation.coordinate = coordinate
+                                        
+                                        mapView.addAnnotation(annotation)
+                                        nameTextField.text = annotationTitle
+                                        noteTextField.text = annotationSubtitle
+                                        
                                     }
                                 }
                                 
@@ -96,8 +107,8 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = koordinat
-            annotation.title = name.text
-            annotation.subtitle = note.text
+            annotation.title = nameTextField.text
+            annotation.subtitle = noteTextField.text
             mapView.addAnnotation(annotation)
         }
     }
@@ -119,8 +130,8 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
         
         let locationEnt = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context)
         
-        locationEnt.setValue(name.text, forKey: "name")
-        locationEnt.setValue(note.text, forKey: "note")
+        locationEnt.setValue(nameTextField.text, forKey: "name")
+        locationEnt.setValue(noteTextField.text, forKey: "note")
         
         locationEnt.setValue(ch_latitude, forKey: "latitude")
         locationEnt.setValue(ch_longitude, forKey: "longitude")
