@@ -39,6 +39,13 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
         if ch_name != "" {
             if let uuidString = ch_id?.uuidString {
                 print(uuidString)
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
+                fetchRequest.predicate = NSPredicate(format: "id = %@", uuidString)
+                fetchRequest.returnsObjectsAsFaults = false
             }
         } else {
             
