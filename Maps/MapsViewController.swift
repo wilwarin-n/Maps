@@ -20,6 +20,11 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
     var ch_latitude = Double()
     var ch_longitude = Double()
     
+    var annotationTitle = ""
+    var annotationSubtitle = ""
+    var annotationLatitude = Double()
+    var annotationLongtitude = Double()
+    
     var ch_name = ""
     var ch_id : UUID?
     
@@ -46,6 +51,34 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Location")
                 fetchRequest.predicate = NSPredicate(format: "id = %@", uuidString)
                 fetchRequest.returnsObjectsAsFaults = false
+                
+                do {
+                    let results = try context.fetch(fetchRequest)
+                    
+                    for result in results as! [NSManagedObject] {
+                        
+                        if let name = result.value(forKey: "name") as? String {
+                            annotationTitle = name
+                            
+                            if let note = result.value(forKey: "note") as? String {
+                                
+                                annotationSubtitle = note
+                                
+                                if let latitude = result.value(forKey: "latitude") as? Double {
+                                    annotationLatitude = latitude
+                                    
+                                    if let longtitude = result.value(forKey: "longtitude") as? Double {
+                                        annotationLongtitude = longtitude
+                                    }
+                                }
+                                
+                            }
+                            
+                        }
+                    }
+                } catch {
+                    print("Error")
+                }
             }
         } else {
             
