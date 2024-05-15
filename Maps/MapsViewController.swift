@@ -80,6 +80,12 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
                                         nameTextField.text = annotationTitle
                                         noteTextField.text = annotationSubtitle
                                         
+                                        locationManager.stopUpdatingLocation()
+                                        
+                                        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                        let region = MKCoordinateRegion(center: coordinate, span: span)
+                                        mapView.setRegion(region, animated: true)
+                                        
                                     }
                                 }
                                 
@@ -116,11 +122,12 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //print(locations[0].coordinate.latitude)
         //print(locations[0].coordinate.longitude)
-        
-        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
+        if ch_name == "" {
+            let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
+        }
     }
 
     @IBAction func clickedSaveButton(_ sender: Any) {
