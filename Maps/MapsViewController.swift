@@ -153,6 +153,7 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
         }
         
         NotificationCenter.default.post(name: NSNotification.Name("createdNewPlace"), object: nil)
+        navigationController?.popViewController(animated: true)
         
     }
     
