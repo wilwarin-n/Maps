@@ -152,6 +152,8 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
             print("error")
         }
         
+        NotificationCenter.default.post(name: NSNotification.Name("createdNewPlace"), object: nil)
+        
     }
     
     
