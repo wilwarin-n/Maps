@@ -133,11 +133,18 @@ class MapsViewController: UIViewController, MKMapViewDelegate,CLLocationManagerD
             
             let requestLocation = CLLocation(latitude: annotationLatitude, longitude: annotationLongtitude)
             
-            CLGeocoder().reverseGeocodeLocation(requestLocation) { placeMarkList, Error in
-                if let placemarks = placeMarkList {
-                    placemarks.count > 0 {
+            CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarkList, Error) in
+                if let placemarks = placemarkList {
+                    
+                    if placemarks.count > 0 {
                         
+                        let newPlacemark = MKPlacemark(placemark: placemarks[0])
+                        let item = MKMapItem(placemark: newPlacemark)
+                        item.name = self.annotationTitle
                         
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+                        
+                        item.openInMaps(launchOptions: launchOptions)
                     }
                 }
             }
